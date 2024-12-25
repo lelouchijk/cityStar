@@ -1,6 +1,5 @@
 package com.city_star.model;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,12 +17,14 @@ public class Doctor extends User{
 	private int consultation_fee;
 	private String hospital_address;
 	
-	
+	private String email;
+	private String password;
+	private Role role;
 	
 	
 	public Doctor() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 
@@ -37,6 +38,14 @@ public class Doctor extends User{
 		this.consultation_fee = consultation_fee;
 		this.hospital_address = hospital_address;
 	}
+
+	public Doctor(String doctorName, String email, String password, Role role) {
+        super();
+		this.doctorName = doctorName;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+    }
 
 
 
@@ -107,6 +116,30 @@ public class Doctor extends User{
 	public void setHospital_address(String hospital_address) {
 		this.hospital_address = hospital_address;
 	}
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 	
 	
 	

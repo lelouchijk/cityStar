@@ -3,8 +3,6 @@ package com.city_star.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import javax.management.relation.Role;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -19,19 +17,20 @@ import jakarta.persistence.PreUpdate;
 
 
 @Entity
-public class User {
+public abstract class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId;
 	
 	private String name;
+
+	@Column(nullable = false, unique = true, length = 100)
 	private String email;
+	
 	private String password;
 	
-	// @Enumerated(EnumType.STRING)
-	// @Column(nullable = false)
-	// private Role role;
+
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="role_id",nullable = false)
