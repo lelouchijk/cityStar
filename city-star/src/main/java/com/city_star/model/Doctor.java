@@ -117,26 +117,32 @@ public class Doctor extends User{
 		this.hospital_address = hospital_address;
 	}
 
+	@Override
     public String getEmail() {
         return email;
     }
 
+	@Override
     public void setEmail(String email) {
         this.email = email;
     }
 
+	@Override
     public String getPassword() {
         return password;
     }
 
+	@Override
     public void setPassword(String password) {
         this.password = password;
     }
 
+
+	@Override
     public Role getRole() {
         return role;
     }
-
+	@Override
     public void setRole(Role role) {
         this.role = role;
     }
